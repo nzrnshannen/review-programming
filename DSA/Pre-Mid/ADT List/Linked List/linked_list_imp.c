@@ -34,6 +34,16 @@ void deleteAllOccurrences(List *list, int elem);
 void clearFunc(List *list); //to free all nodes
 int main()
 {
+    List myList;
+    myList = initializeList();
+    populateList(&myList);
+
+    displayList(myList);
+    deleteAllOccurrences(&myList, 3);
+    displayList(myList);
+
+    clearFunc(&myList);
+    
     return 0;
 }
 
@@ -48,7 +58,11 @@ List initializeList()
 
 void populateList(List *list)
 {
-
+    insertAtBeginning(list, 1);
+    insertAtBeginning(list, 3);
+    insertAtBeginning(list, 3);
+    insertAtEnd(list, 5);
+    insertAtEnd(list, 3);
 }
 
 void displayList(List list)
@@ -126,7 +140,7 @@ void deleteFirstOccurrence(List *list, int elem)
         List *trav;
         for(trav=list; *trav!=NULL && (*trav)->elem!=elem; trav=&(*trav)->link){}
 
-        if(trav!=NULL)
+        if(*trav!=NULL)
         {
             List temp;
             temp = *trav;
@@ -143,12 +157,30 @@ void deleteAllOccurrences(List *list, int elem)
     {
         List *trav;
 
-        for(trav=list; *trav!=NULL; trav=&(*trav)->link)
+        for(trav=list; *trav!=NULL; )
         {
             if((*trav)->elem==elem)
             {
-                
+                List temp;
+                temp = *trav;
+                *trav = temp->link;
+                free(temp);
+            }
+            else
+            {
+                trav=&(*trav)->link;
             }
         }
+    }
+}
+
+void clearFunc(List *list)
+{
+    while(*list!=NULL)
+    {
+        List temp;
+        temp = *list;
+        *list = temp->link;
+        free(temp);
     }
 }
