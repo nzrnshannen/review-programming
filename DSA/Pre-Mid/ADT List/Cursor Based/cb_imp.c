@@ -1,4 +1,8 @@
 /*
+    CURSOR-BASED IMPLEMENTATION
+    - uses array nodes/cells but treated as a linked list
+    - can be implemented ising any of the 4 array versions
+
     Note: Make sure to familiarize yourself with linked list.
 */
 
@@ -16,9 +20,12 @@ typedef struct{
 }VirtualHeap;
 
 typedef int CLIST;
+/*
+    When we say CLIST head, it's just equivalent to --> int head;
+*/
 
 //management operations
-CLIST initializeList(); //the head set to NULL; same functionality void initializeList(CLIST* Clist), the return type and no. of parameters are just different
+CLIST initializeList(); //the head set to -1 (equivalent to NULL); same functionality with void initializeList(CLIST* Clist), the return type and no. of parameters are just different
 void initializeVH(VirtualHeap *VH); //links all cells in the array; stores available node in avail 
 int allocSpace(VirtualHeap *VH); //acts like malloc(), returns index; acts like deleteAtBeginning() in linked list
 void deallocSpace(VirtualHeap *VH, int ndx); //acts like free(), similar to insertAtBeginning() in linked list
@@ -88,6 +95,7 @@ Version 1 of intiializing the virtual heap
 
 
 --> this code can still be modified :)
+
 */
 }
 
