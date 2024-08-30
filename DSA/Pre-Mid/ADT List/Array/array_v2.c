@@ -16,7 +16,7 @@ typedef struct{
 
 
 /*
-    Based on the given structure above, we can access members,
+    Based on the given structure above, we can access members
 
     if LIST example, then example->_____
     LIST example is the equivalent of nodeType* example.
