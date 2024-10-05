@@ -109,12 +109,15 @@ void pop(STACK *stack)
 
 int top(STACK stack)
 {
-    stack.elemPtr[stack.top];
+    return stack.elemPtr[stack.top];
 }
 
 void deleteFirstOccurrence(STACK *stack, int elem)
 {
-
+    if(!isEmpty(*stack))
+    {
+        STACK tempStack;
+    }
 }
 
 void deleteAllOccurrences(STACK *stack, int elem)

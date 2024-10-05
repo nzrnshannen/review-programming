@@ -68,30 +68,8 @@
 #include<stdio.h>
 int main()
 {
-    int min = 60;
-    float result = 0;
-    float input;
-
-    printf("Enter the number of hours: ");
-    scanf("%f", &input);
-
-    while(input!=0)
-    {
-        if(input<0)
-        {
-            printf("Enter a positive number!\n\n");
-        }
-        else    
-        {
-            result = input * min;
-            printf("Result = %.2f\n", result);
-        }
-    
-        printf("Enter the number of hours: ");
-        scanf("%f", &input);
-    }
-
-    printf("\n\t*** End of Program ***");
+    int var = 52;
+    printf("%d", var);
 
     return 0;
 }
